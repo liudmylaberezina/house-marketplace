@@ -14,6 +14,7 @@ import { toast } from 'react-toastify'
 import Spinner from '../components/Spinner'
 import ListingItem from '../components/ListingItem'
 
+
 function Category() {
   const [listings, setListings] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -64,17 +65,17 @@ function Category() {
   const onFetchMoreListings = async () => {
     try {
       // Get reference
-      const listingsRef = collection(db, 'listings')
-
+      const listingsRef = collection(
+        db,
+        "listings"
+      ) 
       // Create a query
       const q = query(
         listingsRef,
         where('type', '==', params.categoryName),
-        orderBy('timestamp', 'desc'),
-        startAfter(lastFetchedListing),
+        orderBy('timestamp', 'desc'), 
         limit(10)
       )
-
       // Execute query
       const querySnap = await getDocs(q)
 

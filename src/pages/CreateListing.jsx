@@ -269,6 +269,7 @@ function CreateListing() {
             value={location}
             onChange={onMutate}
             required
+            
           />
 
           {!geolocationEnabled && (
@@ -364,7 +365,9 @@ function CreateListing() {
           <button type='submit' className='primaryButton createListingButton'>
             Create Listing
           </button>
-        </form>
+
+
+       </form>
       </main>
     </div>
   )
